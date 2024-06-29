@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang = "pt-BR">
+<head>
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	<link rel = "stylesheet" href = "./css/fonts.css">
+	<link rel = "stylesheet" href = "./css/page.css">
+	<link rel = "stylesheet" href = "./css/header.css">
+	<link rel = "icon" href = "./assets/img/logoSVG.svg" type = "image/svg+xml">
+	<title>Drive</title>
+</head>
+
+<body>
+
+	<header class="cabeçalho">
+		<div class="containerLogo">
+			<img src="./assets/img/logoSVG.svg" alt="Logotipo" id="imgLogo"/>
+		</div>
+		<div class="containerTitulo">
+			<h1 id="titulo">
+				Título
+			</h1>
+	
+			<h3 id="slogan">
+				Slogan
+			</h3>
+		</div>
+	</header>
+
+
+	<main class="viewer">
+		
+		<script src="./components/Viewer/api.js"></script>
+		<script src="./components/Viewer/reader.js"></script>
+		<script src="./components/Viewer/render.js"></script>
+
+
+		<div class="localizacao">
+			<h3 id="localPadrao">
+				Você está vendo:
+			</h3>
+	
+			<h1 id="localView">
+				<span id="localItem"></span>
+			</h1>
+
+			<div class="botões">
+				<button class="botão" tabindex="0" id="botaoVoltar" type="button" onclick="voltarAnterior()">
+					<img src="./assets/img/icons8-voltar-50.png">
+					Voltar para pasta anterior
+				</button>
+				
+				<button class="botão" tabindex="0" id="botaoVoltarRoot" type="button" onclick="voltarRaiz()">
+					<img src="./assets/img/iconHome.png">
+					Voltar ao início
+				</button>
+				
+				<button class="botão" tabindex="0" id="botaoBaixar" type="button" onclick="downloadFile()">
+					<img src="./assets/img/iconDownload.png">
+					Baixar o arquivo
+				</button>
+			</div>
+
+			<hr>
+		</div>
+		
+
+		<div id="itens"></div>
+		<!--
+			Essa div pode assumir duas classes, uma para representar um grid, outra flexbox
+		-->
+
+		<div id="caixaLoad">
+			<div id="load">
+				<div id="loader"></div>
+			</div>
+		</div>
+		
+	</main>
+</body>
+
+</html>

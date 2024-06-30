@@ -1,0 +1,169 @@
+
+
+
+.localizacao {
+	background-color: #fbfbfb;
+	top: 0;
+	position: sticky;
+	z-index: 1;
+}
+
+#localPadrao, #localView {
+	margin: 0;
+	font-family: "Lato";
+
+}
+
+.botões {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.botão {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 2px;
+	height: 24px;
+}
+
+.botão > img {
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+	.itensGrid {
+		grid-template-columns: repeat(auto-fit, 120px);
+		grid-auto-rows: 108px;
+	}
+
+	.iconeItens {
+		max-width: 108px;
+		max-height: 48px;
+	}
+
+	.divNome {
+		font-size: 12px;
+	}
+
+	.botão {
+		font-size: 10px;
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.itensGrid {
+		grid-template-columns: repeat(auto-fit, 200px);
+		grid-auto-rows: 180px;
+	}
+
+	.iconeItens {
+		max-width: 180px;
+		max-height: 90px;
+	}
+
+	.divNome {
+		font-size: 16px;
+	}
+}
+
+.itensGrid {
+	display: grid;
+	width: 100vw;
+
+	gap: 5px 5px;
+	position: absolute;
+}
+
+.itensFlex {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.divItens {
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+	background-color: #f4f2f2;
+	border-radius: 10px;
+	border: 1px solid #e2e2e2;
+
+	padding: 10px 5px 10px 5px;
+
+	text-align: center;
+	word-break: break-word;
+	transition: background-color 0,3s ease;
+}
+
+.divItens:hover {
+	background-color: #e2e2e2;
+}
+
+.iconeItens {
+	width: auto;
+	height: auto;
+}
+
+.divNome {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-family: "Roboto", sans-serif;
+
+}
+
+#iframe {
+	width: 90vw;
+	height: 100%;
+}
+
+
+#load {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	backdrop-filter: blur(15px);
+}
+
+#loader {
+	animation: is-rotating 1s infinite;
+	border: 6px solid #e5e5e5;
+	border-radius: 50%;
+	border-top-color: #51d4db;
+	height: 50px;
+	width: 50px;
+}
+
+@keyframes is-rotating {
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+.divVazio {
+	display: flex;
+	width: 100vw;
+	height: 60vh;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#imgVazio {
+	width: 50%;
+	height: 50%;
+}

@@ -1,0 +1,62 @@
+:root {
+	--gradiente1: linear-gradient(90deg, rgba(0,143,12,1) 21%, rgba(0,170,22,1) 38%, rgba(4,198,0,1) 61%, rgba(0,216,4,1) 84%);
+	--gradiente2: linear-gradient(90deg, rgba(0,143,12,0.9) 21%, rgba(0,170,22,0.8) 38%, rgba(4,198,0,0.7) 61%, rgba(0,216,4,0.6) 84%);
+}
+
+body {
+	margin: 0;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+	.cabeçalho {
+		justify-content: center;
+	}
+	
+	#titulo, #slogan {
+		font-size: 18px;
+	}
+
+	#imgLogo {
+		width: 90px;
+		height: 90px;
+	}
+
+	.containerLogo {
+		padding-right: 20px;
+	}
+
+}
+
+@media screen and (min-width: 481px) {
+	#imgLogo {
+		width: 40%;
+		height: 40%;
+	}
+
+}
+
+.cabeçalho {
+	padding: 10px 0 20px 0;
+	background-image: var(--gradiente2), url("../assets/img/fundo2.png"), var(--gradiente1);
+	width: 100vw;
+	display: flex;
+	align-items: center;
+}
+
+#imgLogo {
+	min-width: 82px;
+	min-height: 82px;
+}
+
+.containerLogo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+}
+
+#titulo, #slogan {
+	margin: 0;
+	color: #ffdb00;
+	font-family: "Lato", sans-serif;
+}

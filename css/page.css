@@ -23,6 +23,7 @@
 	justify-content: center;
 	margin-left: 2px;
 	height: 24px;
+	font-size: clamp(10px,13px,14px);
 }
 
 .botão > img {

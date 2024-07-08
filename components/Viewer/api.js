@@ -85,3 +85,23 @@ function compareFolderNames(nameA, nameB) {
 	return nameA.localeCompare(nameB);
 }
 
+async function getDataURL(urlID) {
+	let url = `https://www.googleapis.com/drive/v3/files/${urlID}?key=${API_KEY}&fields=name,mimeType`;
+  
+	try {
+	  const response = await fetch(url);
+  
+	  if (!response.ok) {
+		throw new Error('Network response was not ok ' + response.statusText);
+	  }
+  
+	  const data = await response.json();
+	  return {
+		Nome: data.name,
+		Tipo: data.mimeType
+	  };
+	} catch (error) {
+	  console.error('There was a problem with the fetch operation:', error);
+	  return null;
+	}
+  }

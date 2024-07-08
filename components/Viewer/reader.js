@@ -1,4 +1,5 @@
 var rootID = "1TPPPmbdMsTsSyfwVXAQjO4exgHiFsF58";
+
 var listaPastas = [{
 	"ID": rootID,
 	"Nome": "Materiais de estudos - JG",
@@ -10,17 +11,26 @@ function elementoLista() {
 }
 
 function voltarAnterior(status) {
-	if (listaPastas.length > 1) {
+	if (listaPastas.length > 2) {
 		setLoad();
 		listaPastas.pop();
 		if (status === undefined) {
 			getDataAPI(elementoLista().ID);
 		}
+	} else {
+		if (listaPastas.length === 2) {
+			atualizaURL(undefined);
+			listaPastas = [listaPastas[0]];
+			setLoad();
+			getDataAPI(elementoLista().ID);
+		}
 	}
 }
 
+
 function voltarRaiz() {
 	if (listaPastas.length > 1) {
+		atualizaURL(undefined);
 		listaPastas = [listaPastas[0]];
 		setLoad();
 		getDataAPI(elementoLista().ID);
@@ -44,4 +54,15 @@ function leituraURL() {
 		return chaves;
 	}
 
+}
+
+function atualizaURL(id) {
+	let params = new URLSearchParams(window.location.search);
+	if (id !== undefined) {
+		params.set('id', id);
+		window.history.pushState({}, '', window.location.pathname + '?' + params.toString());
+	} else {
+		params.delete('id');
+		window.history.pushState({}, '', window.location.pathname);
+	}
 }

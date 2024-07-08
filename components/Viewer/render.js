@@ -100,7 +100,7 @@ function geraElementos(lista) { // Carrega elementos da pasta (itens dentro da p
 		let txtAviso = document.createElement("div");
 		txtAviso.classList.add("itemDinamico");
 		txtAviso.style.fontFamily = "Lato, sans-serif";
-		txtAviso.textContent = "Opa! Parece que essa pasta está vazia!";
+		txtAviso.textContent = "Opa! Parece que aqui está vazio!";
 		aviso.append(txtAviso);
 		setLoad(1);
 	}
@@ -125,15 +125,34 @@ function carregaIframe(ID) { //Abre o arquivo em iframe
 Procedimentos com o script
 */
 
-if (leituraURL()[0]) { //Se tiver algo na URL
-	listaPastas.push({"id": leituraURL()[0]});
+if (leituraURL()[0] !== undefined && leituraURL()[0] !== rootID) { // Se tiver algo na URL
+	getDataURL(leituraURL()[0]).then(infos => {
+		listaPastas.push({
+		"ID": leituraURL()[0],
+		"Nome": infos.Nome,
+		"Tipo": infos.Tipo
+	});
+
+	if (infos.Tipo === "application/vnd.google-apps.folder") {
+		getDataAPI(leituraURL()[0]);
+	} else {
+		carregaIframe(leituraURL()[0]);
+	}
+	})
+	
+} else {
+	getDataAPI(elementoLista().ID); //Chama a API
 }
 
 
-getDataAPI(elementoLista().ID); //Chama a API
 
 document.addEventListener("readAPI", function() {
 	document.getElementById("botaoBaixar").style.display = "block";
+
+	if (elementoLista().ID !== rootID) {
+		atualizaURL(elementoLista().ID);
+	}
+
 	switch (elementoLista().Tipo) {
 		case "application/vnd.google-apps.folder":
 			clearItens();
@@ -155,4 +174,8 @@ document.addEventListener("readAPI", function() {
 			setLoad(1);
 			break;
 	}
+})
+
+window.addEventListener('popstate', function() {
+	voltarAnterior();
 })

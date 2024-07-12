@@ -1,1 +1,141 @@
+<!DOCTYPE html>
+<html lang = "pt-BR">
+<head>
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 
+	<link rel = "stylesheet" href = "../css/fonts.css">
+	<link rel = "stylesheet" href = "../css/header.css">
+	<link rel = "stylesheet" href = "./page.css">
+	<link rel = "icon" href = "../assets/img/logoSVG.svg" type = "image/svg+xml">
+	<title>Drive</title>
+</head>
+
+<body>
+	<script src="./redirect.js"></script>
+
+	<header class="cabeçalho">
+		<div class="containerLogo">
+			<img src="../assets/img/logoSVG.svg" alt="Logotipo" id="imgLogo"/>
+		</div>
+		<div class="containerTitulo">
+			<h1 id="titulo">
+				Título
+			</h1>
+	
+			<h3 id="slogan">
+				Slogan
+			</h3>
+		</div>
+	</header>
+
+	<main>
+		<div class="apresentacao show"> <!-- Apresentar o Drive-->
+			Agora ficou mais fácil acessar os<br>materiais de estudo!
+			<button type="button" tabindex="0" onclick="redirecionar('main')">Acessar agora</button>
+		</div>
+		<hr>
+
+		<div class="conteudo show"> <!-- Pasta conteúdos-->
+			<div class="divImg">
+				<img src="../assets/img/iconeConteudos.png" alt="Materiais" class="imgIcon"/>
+			</div>
+
+			<div class="botaoTxt">
+				Mais de 800 questões e diversas apostilas e resumos
+				<button type="button" tabindex="0" onclick="redirecionar('cont')">Quero ver os materiais de estudo</button>
+			</div>
+		</div>
+		
+		<div class="livros show"> <!-- Pasta livros-->
+			<div class="botaoTxt">
+				Livros didáticos na palma da mão, para não levar peso na mochila
+				<button type="button" tabindex="0" onclick="redirecionar('livros')">Acessar os livros</button>
+			</div>
+
+			<div class="divImg">
+				<img src="../assets/img/iconeLivros.png" alt="Livros" class="imgIcon">
+			</div>
+
+		</div>
+		
+		<div class="enemUece show"> <!-- Pasta enem e uece-->
+			<div class="divImg">
+				<img src="../assets/img/enem.svg" alt="Materiais" class="imgIcon"/>
+				<img src="../assets/img/uece.png" alt="Materiais" class="imgIcon"/>
+			</div>
+
+			<div class="botaoTxt">
+				Provas do ENEM e da UECE de fácil acesso
+				<div class="botaoEnemUece">
+					<button type="button" tabindex="0" onclick="redirecionar('enem')">Provas ENEM</button>
+					<button type="button" tabindex="0" onclick="redirecionar('uece')">Provas UECE</button>
+				</div>
+			</div>
+
+		</div>
+		
+		<div class="olimpiada show"> <!-- Pasta olimpíadas-->
+			<div class="botaoTxt">
+				Garanta a medalha de ouro se preparando para as olimpíadas do conhecimento
+				<button type="button" tabindex="0" onclick="redirecionar('olimpiada')">Ver provas de olimpíadas</button>
+			</div>
+
+			<div class="divImg">
+				<img src="../assets/img/iconeOlimpiada.png" alt="Livros" class="imgIcon">
+			</div>
+
+		</div>
+		
+		<div class="folhas show"> <!-- Pasta folhas modelo-->
+			<div class="divImg">
+				<img src="../assets/img/iconeFolhas.png" alt="Materiais" class="imgIcon"/>
+			</div>
+
+			<div class="botaoTxt">
+				Vários modelos de folha para auxiliar seus estudos
+				<button type="button" tabindex="0" onclick="redirecionar('folhas')">Quero me organizar</button>
+			</div>
+
+		</div>
+		
+		<div class="simulados show"> <!-- Pasta simulados-->
+			<div class="botaoTxt">
+				Simulados de vestibulares para arrasar na hora
+				<button type="button" tabindex="0" onclick="redirecionar('simulados')">Praticar um simulado</button>
+			</div>
+
+			<div class="divImg">
+				<img src="../assets/img/iconeSimulados.png" alt="Livros" class="imgIcon">
+			</div>
+
+		</div>
+		
+		<div class="livrosExtra show"> <!-- Pasta livros paradidaticos-->
+			<div class="divImg">
+				<img src="../assets/img/iconeParadidaticos.png" alt="Materiais" class="imgIcon"/>
+			</div>
+
+			<div class="botaoTxt">
+				Quer ler algum livro? Aqui também tem!
+				<button type="button" tabindex="0" onclick="redirecionar('livrosExt')">Escolher um livro</button>
+			</div>
+
+		</div>
+		
+		<div class="provas show"> <!-- Pasta outras provas -->
+			<div class="botaoTxt">
+				Provas e vestibulares adicionais para você praticar
+				<button type="button" tabindex="0" onclick="redirecionar('provas')">Acessar</button>
+			</div>
+
+			<div class="divImg">
+				<img src="../assets/img/iconeProvas.png" alt="Livros" class="imgIcon">
+			</div>
+
+		</div>
+	</main>
+
+</body>
+
+</html>
